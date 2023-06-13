@@ -1,9 +1,12 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { BsGithub } from "react-icons/bs";
 
 const Search = () => {
   const [username, setUsername] = useState("");
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -15,9 +18,14 @@ const Search = () => {
       const response = await axios.get(
         `https://api.github.com/users/${username}`
       );
-      console.log(response);
-    } catch (error) {
-      console.log("Error: ", error);
+      setError("");
+
+      const userData = response.data;
+      navigate(`/user/${userData.login}`, {
+        state: { userData },
+      });
+    } catch (err) {
+      setError("User not found");
     }
   };
 
@@ -35,6 +43,7 @@ const Search = () => {
           text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
           onChange={(e) => setUsername(e.target.value)}
         />
+        {error && <p className="mt-1 text-red-500">{error}</p>}
       </form>
     </div>
   );
