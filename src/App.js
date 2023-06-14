@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Search from "./components/Search";
@@ -6,7 +6,14 @@ import Footer from "./components/Footer";
 import User from "./components/User";
 
 function App() {
-  const [darkMode, setDarkToggle] = useState(true);
+  const cacheMode = localStorage.getItem("darkMode");
+  const [darkMode, setDarkToggle] = useState(
+    cacheMode ? cacheMode === "true" : true
+  );
+
+  useEffect(() => {
+    localStorage.setItem("darkMode", darkMode);
+  }, [darkMode]);
 
   return (
     <div className={`${darkMode ? "dark" : "light"} `}>

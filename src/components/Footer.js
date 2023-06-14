@@ -9,7 +9,7 @@ const Footer = () => {
       <div className="flex items-center">
         <p className="text-sm mx-2">Follow me on </p>
         <a href="https://github.com/ivanrs99" target="_blank" rel="noreferrer">
-          <VscGithub size="2vw" />
+          <VscGithub size="24" />
         </a>
       </div>
     </footer>

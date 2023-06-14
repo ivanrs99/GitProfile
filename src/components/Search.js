@@ -21,9 +21,7 @@ const Search = () => {
       setError("");
 
       const userData = response.data;
-      navigate(`/user/${userData.login}`, {
-        state: { userData },
-      });
+      navigate(`/user/${userData.login}`);
     } catch (err) {
       setError("User not found");
     }
