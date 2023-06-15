@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import GhPolyglot from "gh-polyglot";
 import axios from "axios";
+import Chart from "./Chart";
 
 const User = () => {
   const { username } = useParams();
@@ -29,10 +30,13 @@ const User = () => {
 
   useEffect(() => {
     fetchUserData();
+  }, []);
+
+  useEffect(() => {
     if (userData) {
       getStats();
     }
-  }, []);
+  }, [userData]);
 
   return (
     <div className="w-full md:w-4/12 mt-10">
@@ -74,6 +78,7 @@ const User = () => {
               </span>
             </div>
           </div>
+          {userStats && <Chart userStats={userStats} />}
         </div>
       )}
     </div>
