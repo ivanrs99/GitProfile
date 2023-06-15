@@ -5,7 +5,9 @@ Click [aquí](https://git-profile-lake.vercel.app/) para ver la web!
 ## Descripción
 
 Buscador de perfiles de github para ver sus datos.
+
 Mostrará un gráfico con los lenguajes más usados por el usuario.
+
 Posibilidad de escoger entre modo oscuro y claro, según la preferencia del usuario.
 
 ## Lenguajes y Frameworks
