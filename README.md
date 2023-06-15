@@ -10,11 +10,15 @@ Posibilidad de escoger entre modo oscuro y claro, según la preferencia del usua
 
 ## Lenguajes y Frameworks
 
+<span>
 <img height="30" src="https://img.shields.io/badge/-HTML5-red" />
 <img height="30" src="https://img.shields.io/badge/-CSS-blue" />
 <img height="30" src="https://img.shields.io/badge/-JAVASCRIPT-yellow" />
+</span>
+<span>
 <img height="30" src="https://img.shields.io/badge/-REACT-9cf" />
 <img height="30" src="https://img.shields.io/badge/-TAILWIND%20CSS-orange" />
+</span>
 
 ## Instalación
 
